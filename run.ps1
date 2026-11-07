@@ -5,9 +5,9 @@ Write-Host "============================================================" -Foreg
 Write-Host ""
 
 $pythonCandidates = @(
+    "$PSScriptRoot\backend\venv\Scripts\python.exe",
     "$env:USERPROFILE\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe",
     "$env:LOCALAPPDATA\Programs\Python\Python312\python.exe",
-    "$PSScriptRoot\backend\venv\Scripts\python.exe",
     "python",
     "py"
 )

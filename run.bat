@@ -7,15 +7,15 @@ echo.
 
 set "PY_EXE="
 
-REM 1. Check dedicated Codex Python (Primary runtime)
-if exist "%USERPROFILE%\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe" (
-    set "PY_EXE=%USERPROFILE%\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe"
+REM 1. Check local venv
+if exist "%~dp0backend\venv\Scripts\python.exe" (
+    set "PY_EXE=%~dp0backend\venv\Scripts\python.exe"
     goto launch
 )
 
-REM 2. Check local venv
-if exist "%~dp0backend\venv\Scripts\python.exe" (
-    set "PY_EXE=%~dp0backend\venv\Scripts\python.exe"
+REM 2. Check dedicated Codex Python (Primary runtime)
+if exist "%USERPROFILE%\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe" (
+    set "PY_EXE=%USERPROFILE%\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe"
     goto launch
 )
 
